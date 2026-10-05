@@ -4,20 +4,11 @@ Curso de Análisis y Diseño de Algoritmos. El trabajo es encontrar una buena co
 
 | Notebook | Colab |
 |---|---|
-| Proyecto (estudiantes) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo.ipynb) |
-| Solución Backtracking | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo_solucion_backtracking.ipynb) |
-| Solución NPO · Qwen 1.7B | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo_solucion_NPO_qwen17B.ipynb) |
-| Solución NPO · Qwen 1.7B 4-bit | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo_solucion_NPO_qwen17B_4bit.ipynb) |
-| Solución NPO · Llama 3B | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo_solucion_NPO_llama3B.ipynb) |
-| Solución NPO · Ministral 3B | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo_solucion_NPO_mistral3B.ipynb) |
-| Solución NPO · Qwen 8B | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-AyD-algoritmos/blob/main/proyecto_oraculo_solucion_NPO_qwen8B.ipynb) |
-
-Los notebooks NPO implementan el **Algoritmo 1** de Chang y Chen (2026) [1]. El de
-backtracking es la otra solución de ejemplo: recorre el catálogo con poda, sin teacher.
+| Proyecto | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DanielMelo404/Proyecto-Oraculo-AyD/blob/main/proyecto_oraculo.ipynb) |
 
 ## Cómo se juega
 
-1. Abran el notebook del curso en Colab (primera fila de la tabla).
+1. Abran el notebook del curso en Colab.
 2. Corran las celdas 1–3. En la 1, **reinicien el entorno** cuando lo pida.
 3. Escriban su heurística **solo en la celda 4**.
 4. Exporten `entrega.json` en la celda 5.
@@ -77,17 +68,11 @@ r_val = oraculo.validar(mejor[1], n=30)
 
 Una instancia trae **hasta 5 restricciones** (2.3 en promedio) y se puntúa todo-o-nada: basta que falle una para que valga 0. En las instancias más duras el modelo acierta poco, así que **con pocas instancias muchas configuraciones van a marcar `0.0` y parecer iguales**. Si su búsqueda no logra distinguir nada, suban el número de instancias antes de cambiar de heurística — decidir cuántas medir es parte del problema.
 
-## Archivos públicos
+## Archivos
 
 | Archivo | Qué es |
 |---|---|
 | `proyecto_oraculo.ipynb` | El notebook del curso |
-| `proyecto_oraculo_solucion_backtracking.ipynb` | Ejemplo de backtracking con poda, sobre `qwen17b` |
-| `proyecto_oraculo_solucion_NPO_qwen17B.ipynb` | Ejemplo NPO [1] con `qwen17b` |
-| `proyecto_oraculo_solucion_NPO_qwen17B_4bit.ipynb` | Ejemplo NPO [1] con `qwen17b4bit` |
-| `proyecto_oraculo_solucion_NPO_llama3B.ipynb` | Ejemplo NPO [1] con `llama3b` |
-| `proyecto_oraculo_solucion_NPO_mistral3B.ipynb` | Ejemplo NPO [1] con `ministral3b` |
-| `proyecto_oraculo_solucion_NPO_qwen8B.ipynb` | Ejemplo NPO [1] con `qwen8b` |
 | `oraculo.py` | La caja negra. Se consulta, no se abre |
 | `ayudas.py` | Cargar modelo, datos, dividir, ver un prompt, curva, entrega |
 | `datos_visibles.json` | 450 instancias: 100 de búsqueda, 87 de validación, 263 descartadas |
@@ -103,3 +88,7 @@ Un `entrega.json` con grupo, configuración y semana:
  "semana": 3
 }
 ```
+
+## Referencias
+
+[1] Yuan Chang y Xiaoqi Chen, *Naive Prompt Optimization: Rethinking the Need for Complex Prompt Search*, arXiv:2608.27266, 2026. https://arxiv.org/abs/2608.27266
