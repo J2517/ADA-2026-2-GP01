@@ -1,0 +1,3 @@
+# Pruebas locales (no necesitan GPU, ni modelo, ni torch).
+# busqueda.py, registro.py y evaluacion.py solo usan la biblioteca estándar de Python.
+pytest
