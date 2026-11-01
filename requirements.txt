@@ -1,0 +1,20 @@
+# Dependencias para ejecutar los notebooks en Google Colab (GPU T4).
+# Los notebooks las instalan solos en su primera celda; este archivo las deja documentadas.
+# torch, pandas, matplotlib y tqdm ya vienen en el entorno de Colab.
+
+torch
+transformers
+accelerate
+bitsandbytes>=0.46.1
+tqdm
+pandas
+matplotlib
+
+# Verificadores de restricciones (open-instruct / IFBench)
+nltk
+spacy            # + modelo: python -m spacy download en_core_web_sm
+emoji
+langdetect
+immutabledict
+absl-py
+syllapy          # solo lo usa IFBench (notebook de evaluación)
